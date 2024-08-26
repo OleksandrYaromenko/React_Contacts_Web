@@ -1,0 +1,31 @@
+.error {
+  color: red;
+  font-size: 12px;
+}
+.formDiv {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+.form {
+  padding: 30px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-radius: 30px;
+  justify-content: center;
+}
+.field {
+  margin-top: 10px;
+  height: 50px;
+  border: solid;
+  border-radius: 30px;
+  border-color: #21354766;
+  padding-left: 20px;
+}
+.label {
+  margin-left: 20px;
+  font-size: 20px;
+}

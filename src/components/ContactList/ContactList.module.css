@@ -1,0 +1,13 @@
+.conteinerUl {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 40px;
+}
+.conteinerLi {
+  width: 400px;
+  border: solid;
+  border-radius: 30px;
+  align-content: center;
+}

@@ -1,0 +1,12 @@
+.conteinerContact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
