@@ -1,7 +1,13 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiAdminFill } from "react-icons/ri";
 import css from "./Contact.module.css";
-export default function Contact({ item: { name, number, id }, onDelite }) {
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contacts";
+export default function Contact({ item: { name, number, id }}) {
+  const dispatch = useDispatch()
+   const onDeliteContact =(id) =>{
+    dispatch(deleteContact(id))
+   }
   return (
     <div className={css.conteinerContact}>
       <div>
@@ -15,7 +21,7 @@ export default function Contact({ item: { name, number, id }, onDelite }) {
         </p>
       </div>
 
-      <button onClick={() => onDelite(id)}>Delite</button>
+      <button onClick={() => onDeliteContact(id)}>Delite</button>
     </div>
   );
 }
