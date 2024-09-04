@@ -5,12 +5,12 @@ import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
-import { setError, setLoading } from "./redux/contacts";
+import { selectError, selectLoading,} from "./redux/contacts";
 import { RotatingLines } from "react-loader-spinner";
 
 export default function App() {
-  const loading = useSelector(setLoading);
-  const error = useSelector(setError);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   const dispatch = useDispatch();
   useEffect(() => {
