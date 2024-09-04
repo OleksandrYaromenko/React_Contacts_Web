@@ -1,15 +1,18 @@
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import css from "./App.module.css";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
+import { setLoading } from "./redux/contacts";
+import { RotatingLines } from "react-loader-spinner";
 
 
 
 export default function App() {
+  const loading = useSelector(setLoading)
  const dispatch = useDispatch()
  useEffect(() => {
   dispatch(fetchContacts())
@@ -21,6 +24,18 @@ export default function App() {
       
       <ContactForm  />
        <SearchBox /> 
+       {loading &&  <RotatingLines
+  visible={true}
+  height="96"
+  width="96"
+  color="black"
+  strokeWidth="5"
+  animationDuration="0.75"
+  ariaLabel="rotating-lines-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  />
+}
       <ContactList  />
     </div>
   );

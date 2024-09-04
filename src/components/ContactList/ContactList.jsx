@@ -3,7 +3,7 @@ import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
 import { selectNameFilter } from "../../redux/filter";
 export default function ContactList() {
-  const contacts = useSelector((state) => state.contact.contacts.items)
+  const contacts = useSelector((state) => state.contact.items)
   
   const filter = useSelector(selectNameFilter)
 
@@ -13,7 +13,7 @@ export default function ContactList() {
 
   return (
     <ul className={css.conteinerUl}>
-      {contacts.map((items) => (
+      {filteredContacts.map((items) => (
         <li className={css.conteinerLi} key={items.id}>
           <Contact item={items} />
         </li>
