@@ -13,7 +13,7 @@ export default function ContactList() {
 
   return (
     <ul className={css.conteinerUl}>
-      {filteredContacts.map((items) => (
+      {contacts.map((items) => (
         <li className={css.conteinerLi} key={items.id}>
           <Contact item={items} />
         </li>

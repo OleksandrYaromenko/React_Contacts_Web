@@ -1,7 +1,9 @@
+import { useId } from "react";
 import { selectNameFilter, setFilter } from "../../redux/filter";
 import css from "./SearchBox.module.css";
 import { useDispatch , useSelector} from "react-redux";
 export default function SearchBox() {
+  const id = useId()
   const dispatch = useDispatch()
   const filter = useSelector(selectNameFilter)
   const handleFilter = (event) => {
@@ -14,6 +16,7 @@ export default function SearchBox() {
       <input
         className={css.input}
         type="text"
+        id={id}
         value={filter}
         onChange={handleFilter}
       />
