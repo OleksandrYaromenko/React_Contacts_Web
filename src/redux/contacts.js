@@ -45,7 +45,12 @@ const contactSlice = createSlice({
     })
   }
 })
- export const setLoading = (state) => state.contact.loading
+export const setError = (state) =>state.contact.error
+
+export const setLoading = (state) => state.contact.loading
+
+export const setContact = (state) => state.contact.items
+
 export default contactSlice.reducer;
 
 
