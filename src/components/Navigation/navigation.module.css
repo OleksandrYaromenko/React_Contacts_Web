@@ -1,0 +1,31 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
+    margin-right: 40px;
+  }
+  
+  .link.active {
+    color: #646cff;
+  }
+  header {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 100px;
+    border-bottom: solid;
+    
+
+}
+.user{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+  
