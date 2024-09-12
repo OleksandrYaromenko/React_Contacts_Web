@@ -8,9 +8,9 @@ export const register = createAsyncThunk(
     async (newUser, thunkApi) => {
       try {
         const res = await axios.post("/users/signup", newUser);
-        return res.data; // Успішна відповідь повертається
+        return res.data; 
       } catch (error) {
-        return thunkApi.rejectWithValue(error.message); // У разі помилки повертається її повідомлення
+        return thunkApi.rejectWithValue(error.message); 
       }
     }
   );
