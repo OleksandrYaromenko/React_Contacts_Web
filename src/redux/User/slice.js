@@ -15,7 +15,7 @@ const userSlice = createSlice({
     extraReducers: builder => {
       builder
         .addCase(register.pending, (state) => {
-          state.isRefreshing = true; // Показуємо, що реєстрація виконується
+          state.isRefreshing = true;
         })
         .addCase(register.fulfilled, (state, action) => {
           state.user = action.payload.user;
@@ -26,7 +26,7 @@ const userSlice = createSlice({
         .addCase(register.rejected, (state, action) => {
           state.isRefreshing = false;
           state.isLoggedIn = false;
-          console.error(action.payload); // Виводимо повідомлення про помилку
+          console.error(action.payload); 
         });
     },
   });
