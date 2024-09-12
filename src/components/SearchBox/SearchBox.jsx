@@ -6,8 +6,6 @@ import { useDispatch , useSelector} from "react-redux";
 import ContactList from "../ContactList/ContactList";
 export default function SearchBox() {
   const error = useSelector(selectError);
-
- 
   const dispatch = useDispatch()
   const filter = useSelector(selectNameFilter)
   const handleFilter = (event) => {
@@ -16,13 +14,13 @@ export default function SearchBox() {
   };
   return (
     <div className={css.searchDiv}>
-      <div>
-      <p className={css.searchP}>Search by name</p>
+      <div> 
       <input
         className={css.input}
         type="text"
         value={filter}
         onChange={handleFilter}
+        placeholder="Enter name or phone"
       />
       </div>
       <div>

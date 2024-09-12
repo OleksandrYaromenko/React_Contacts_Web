@@ -8,24 +8,14 @@
   }
   
   .link.active {
+    font-size: xx-large;
+    font-size: 100;
     color: #646cff;
   }
-  header {
+  .conteiner{
     display: flex;
-    align-content: space-around;
-    justify-content: space-evenly;
+    flex-direction: column;
     flex-wrap: nowrap;
-    flex-direction: row;
-    width: 100%;
     align-items: center;
-    margin-bottom: 50px;
-    border-bottom: solid;
-    
-
-}
-.user{
-    display: flex;
-    align-items: center;
-    gap: 40px;
 }
   

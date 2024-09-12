@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
-import css from "./UserNav.module.css"
+
+import { makeNavLinkClass } from "../MakeNavLinkClass";
 export default function UserNav() {
     return (
       <div>
-        <NavLink className={css.link} to="/register">
+        <NavLink className={makeNavLinkClass} to="/register">
           Register
         </NavLink>
-        <NavLink className={css.link} to="/login">
+        <NavLink className={makeNavLinkClass} to="/login">
           Log In
         </NavLink>
       </div>

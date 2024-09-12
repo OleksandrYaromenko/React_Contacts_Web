@@ -5,12 +5,13 @@
   border-radius: 30px;
   border-color: #21354766;
   padding-left: 20px;
+  margin-bottom: 40px;
 }
 .searchDiv {
   display: flex;
   flex-direction: column;
   align-content: space-around;
-  margin-top: 100px;
+  margin-top: 30px;
   align-items: center;
   margin-bottom: 100px;
 }
