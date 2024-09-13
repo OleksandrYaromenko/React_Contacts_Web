@@ -1,19 +1,18 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import css from "./LoginPage.module.css";
 import * as Yup from "yup";
-// import { useDispatch } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import { logIn } from "../../redux/User/operations";
 export default function LoginPage() {
-  // const dispatch = useDispatch();
-
-  const SignupSchema = Yup.object().shape({
-    name: Yup.string()
-      .min(3, "Minimun 3 lettes")
-      .max(50, "Maximun 50 lettes")
-      .required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
-  });
+const dispatch = useDispatch()
+const SignupSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+  password: Yup.string()
+    .min(6, "Minimum 6 characters")
+    .required("Required"),
+});
   const handleSubmit = (values, actions) => {
+    dispatch(logIn(values))
     actions.resetForm();
   };
   return (
