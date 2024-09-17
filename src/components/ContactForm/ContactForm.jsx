@@ -1,8 +1,12 @@
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch,} from "react-redux";
 import { addContacts } from "../../redux/contactsOps";
+import toast from "react-hot-toast";
+
+
+
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -12,13 +16,30 @@ const SignupSchema = Yup.object().shape({
   number: Yup.number().min(3, "Minimun 3  number").required("Required"),
 });
 export default function ContactForm() {
+ 
+ 
+
   const dispatch = useDispatch()
   const initialValues = {
     name: "",
     number: "",
   };
   const handleSubmit = (values, actions) => {
-    dispatch(addContacts(values));
+    dispatch(addContacts(values))
+    .unwrap()
+    .then(() => {
+      toast.success('Contact was added successfully', {
+        style: {
+          border: '1px solid rgb(0, 106, 255)',
+          padding: '16px',
+          color: 'rgb(0, 106, 255)',
+        },
+        iconTheme: {
+          primary: 'rgb(0, 226, 45)',
+          secondary: '#FFFAEE',
+        },
+      });
+    })
     actions.resetForm()
   }
   return (
@@ -38,8 +59,9 @@ export default function ContactForm() {
           <Field className={css.field} type="number" name="number" />
           <ErrorMessage component="span" className={css.error} name="number" />
         </div>
-        <button>Add contact</button>
+        <button type="submit">Add contact</button>
       </Form>
     </Formik>
+    
   );
 }

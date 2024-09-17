@@ -6,14 +6,17 @@ import { selectFilteredContacts } from "../../redux/contacts";
 export default function ContactList() {
   
   const filteredContacts = useSelector(selectFilteredContacts)
-
-  return (
+  console.log(filteredContacts.leng);
+  
+  return filteredContacts.length === 0 ? (<div> 
+    <h2>Sorry, no contacts found. Please create new contacts...</h2>
+  </div>) : (
     <ul className={css.conteinerUl}>
       {filteredContacts.map((items) => (
         <li className={css.conteinerLi} key={items.id}>
           <Contact item={items} />
         </li>
       ))}
-    </ul>
-  );
+    </ul>)
+  
 }

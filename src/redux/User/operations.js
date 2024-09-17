@@ -31,3 +31,36 @@ export const register = createAsyncThunk(
       return thunkApi.rejectWithValue(error.message);
     }
   })
+
+
+  export const logOut = createAsyncThunk("user/logOut" ,async(_,thunkApi) =>{
+    try {
+      await axios.post("/users/logout");
+      axios.defaults.headers.common.Authorization = "";
+
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    } 
+   
+  })
+
+
+  export const refresUser = createAsyncThunk("user/refresUser", async( _ ,thunkApi) =>{
+    const reduxStane = thunkApi.getState();
+    console.log(reduxStane);
+    
+    setAuthHeader(reduxStane.user.token);
+    try {
+      const res = await axios.get("/users/current");
+      return res.data
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  },
+  {
+    condition:( _ ,thunkApi) =>{
+      const reduxStane = thunkApi.getState();
+      return reduxStane.user.token !== null
+    }
+  }
+)
