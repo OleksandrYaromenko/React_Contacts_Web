@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import css from "./RegisterPage.module.css";
-import { register } from "../../redux/User/operations";
+import { register } from "../../redux/auth/operations";
 export default function RegisterPage() {
   const dispatch = useDispatch();
   const SignupSchema = Yup.object().shape({

@@ -2,7 +2,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { RiAdminFill } from "react-icons/ri";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContacts } from "../../redux/contactsOps";
+import { deleteContacts } from "../../redux/contacts/operations";
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import toast from "react-hot-toast";

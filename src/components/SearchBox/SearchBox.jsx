@@ -1,6 +1,6 @@
 
-import { selectError,} from "../../redux/contacts";
-import { selectNameFilter, setFilter } from "../../redux/filter";
+import { selectError,} from "../../redux/contacts/contacts";
+import { selectNameFilter, setFilter } from "../../redux/contacts/filter";
 import css from "./SearchBox.module.css";
 import { useDispatch , useSelector} from "react-redux";
 import ContactList from "../ContactList/ContactList";

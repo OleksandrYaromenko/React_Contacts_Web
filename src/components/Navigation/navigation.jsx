@@ -4,7 +4,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import UserNav from "../UserNav/UserNav";
 import { makeNavLinkClass } from "../MakeNavLinkClass";
 import { useSelector } from "react-redux";
-import { selectIsLoggendIn } from "../../redux/User/selector";
+import { selectIsLoggendIn } from "../../redux/auth/selector";
 export default function Navigation() {
   const isLoggendIn = useSelector(selectIsLoggendIn);
   return (

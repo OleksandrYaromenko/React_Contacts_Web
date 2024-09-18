@@ -3,7 +3,7 @@ import css from "./TasksPage.module.css"
 import { makeNavLinkClass } from "../../components/MakeNavLinkClass";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
+import { fetchContacts } from "../../redux/contacts/operations";
 
 export default function TasksPage (){
     const dispatch = useDispatch();
