@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import css from "./navigation.module.css";
 import UserMenu from "../UserMenu/UserMenu";
-import UserNav from "../UserNav/UserNav";
+import UserNav from "../AuthNav/AuthNav";
 import { makeNavLinkClass } from "../MakeNavLinkClass";
 import { useSelector } from "react-redux";
 import { selectIsLoggendIn } from "../../redux/auth/selector";

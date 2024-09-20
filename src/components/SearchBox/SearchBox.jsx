@@ -1,9 +1,10 @@
 
-import { selectError,} from "../../redux/contacts/contacts";
-import { selectNameFilter, setFilter } from "../../redux/contacts/filter";
+import {  setFilter } from "../../redux/filters/slice";
 import css from "./SearchBox.module.css";
 import { useDispatch , useSelector} from "react-redux";
 import ContactList from "../ContactList/ContactList";
+import { selectNameFilter } from "../../redux/filters/selector";
+import { selectError } from "../../redux/contacts/selector";
 export default function SearchBox() {
   const error = useSelector(selectError);
   const dispatch = useDispatch()
